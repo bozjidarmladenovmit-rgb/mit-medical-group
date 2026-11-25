@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="anim.css">
+<style>
+  /* 13 s: why floss — simple tooth graphic with the gap highlighted, then 3 reasons, then CTA. */
+  .s1 { top: 330px; text-align: center; animation: out .5s ease-in 4.8s both; }
+  .s1 .big { font-size: 100px; animation-delay: .2s; }
+  .teeth { position: relative; margin: 90px auto 0; width: 700px; height: 420px; animation: pop .6s ease-out .8s both; }
+  .tooth { position: absolute; top: 0; width: 320px; height: 400px; background: #fff; border-radius: 120px 120px 90px 90px; box-shadow: inset 0 -30px 0 #e3eef5; }
+  .tooth.a { left: 0; } .tooth.b { right: 0; }
+  .gap { position: absolute; left: 330px; top: 30px; width: 40px; height: 340px; border-radius: 20px; background: rgba(224,56,74,.0);
+         animation: glow 1.2s ease-in-out 1.6s 2 both; }
+  @keyframes glow { 0%,100% { background: rgba(224,56,74,0); } 50% { background: rgba(224,56,74,.85); } }
+  .brush { position: absolute; left: -80px; top: 150px; width: 860px; height: 22px; border-radius: 11px; background: #9fe6ef;
+           animation: in-left .6s ease-out 3.2s both; }
+  .s1 .note { margin-top: 70px; font-size: 54px; font-weight: 800; animation-delay: 2.2s; }
+
+  .s2 { top: 330px; animation: out .5s ease-in 9.6s both; }
+  .s2 h2 { font-size: 90px; animation-delay: 5.2s; }
+  .s2 .list { margin-top: 60px; display: grid; gap: 28px; }
+  .tip { display: flex; gap: 30px; align-items: center; padding: 34px 40px; }
+  .tip .n { flex: 0 0 96px; height: 96px; border-radius: 28px; background: var(--navy); color: #fff; display: grid; place-items: center; font-size: 56px; font-weight: 900; }
+  .tip p { font-size: 46px; font-weight: 800; line-height: 1.15; }
+  .tip:nth-child(1) { animation-delay: 6s; } .tip:nth-child(2) { animation-delay: 7s; } .tip:nth-child(3) { animation-delay: 8s; }
+  .cta { animation: pop .6s cubic-bezier(.2,.9,.3,1.3) 10s both; }
+  .cta .pill { animation: pulse 1.2s ease-in-out 10.9s 2; }
+</style></head>
+<body data-duration="13"><div class="canvas story">
+  <div class="band"></div><div class="band two"></div>
+  <div class="header"><div class="badge"><img src="../assets/logo-od-screenshot.png"></div><div class="clinic">МИТ Универзитетска клиника<br>по дентална медицина</div></div>
+
+  <div class="scene s1">
+    <div class="big u">Каде четката<br><span class="hl">не стига?</span></div>
+    <div class="teeth"><div class="tooth a"></div><div class="tooth b"></div><div class="gap"></div></div>
+    <div class="note u">Меѓу забите.</div>
+  </div>
+
+  <div class="scene s2">
+    <h2 class="big u">Затоа –<br><span class="hl">конец за заби</span></h2>
+    <div class="list">
+      <div class="tip card r"><div class="n">1</div><p>Ги чисти наслагите меѓу забите</p></div>
+      <div class="tip card r"><div class="n">2</div><p>Помага против кариес меѓу забите</p></div>
+      <div class="tip card r"><div class="n">3</div><p>Еднаш дневно, нежно до непцето</p></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3 class="big">Не знаете како?<br>Ќе ви покажеме.</h3>
+    <div class="pill">📞 078 480 910</div>
+    <div class="addr">Кисела Вода · бул. Борис Трајковски бр. 62</div>
+  </div>
+</div></body></html>

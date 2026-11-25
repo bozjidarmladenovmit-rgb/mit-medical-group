@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="anim.css">
+<style>
+  /* 13 s: when should a child first see a dentist. */
+  .s1 { top: 340px; animation: out .5s ease-in 4.4s both; }
+  .s1 .q { font-size: 62px; font-weight: 800; animation-delay: .2s; }
+  .s1 .big { font-size: 112px; margin-top: 30px; animation-delay: .8s; }
+  .opts { margin-top: 70px; display: grid; gap: 26px; }
+  .opt { padding: 32px 40px; font-size: 52px; font-weight: 800; }
+  .opt:nth-child(1) { animation-delay: 1.6s; } .opt:nth-child(2) { animation-delay: 2.1s; } .opt:nth-child(3) { animation-delay: 2.6s; }
+
+  .s2 { top: 360px; text-align: center; animation: out .5s ease-in 9.6s both; }
+  .s2 .label { font-size: 46px; font-weight: 900; letter-spacing: 4px; animation-delay: 5s; }
+  .s2 .big { font-size: 128px; margin-top: 30px; animation-delay: 5.4s; }
+  .s2 p { font-size: 50px; font-weight: 600; line-height: 1.35; margin-top: 50px; animation-delay: 6.4s; }
+  .s2 p b { font-weight: 900; }
+  .cta { animation: pop .6s cubic-bezier(.2,.9,.3,1.3) 10s both; }
+  .cta .pill { animation: pulse 1.2s ease-in-out 10.9s 2; }
+</style></head>
+<body data-duration="13"><div class="canvas story">
+  <div class="band"></div><div class="band two"></div>
+  <div class="header"><div class="badge"><img src="../assets/logo-od-screenshot.png"></div><div class="clinic">МИТ Универзитетска клиника<br>по дентална медицина</div></div>
+
+  <div class="scene s1">
+    <div class="q u">Родители, прашање:</div>
+    <div class="big u">Кога е првиот<br><span class="hl">преглед кај детето?</span></div>
+    <div class="opts">
+      <div class="opt card r">А) Кога ќе тргне на училиште</div>
+      <div class="opt card r">Б) Кога ќе заболи забот</div>
+      <div class="opt card r">В) До првиот роденден</div>
+    </div>
+  </div>
+
+  <div class="scene s2">
+    <div class="label hl u">ТОЧЕН ОДГОВОР</div>
+    <div class="big p">В) До првиот<br>роденден</div>
+    <p class="u">Стручните препораки велат: првиот преглед <b>со појавата на првото забче</b>, а најдоцна до првиот роденден. Така детето рано се навикнува – без страв.</p>
+  </div>
+
+  <div class="cta">
+    <h3 class="big">Закажете прв<br>преглед за детето</h3>
+    <div class="pill">📞 078 480 910</div>
+    <div class="addr">Кисела Вода · бул. Борис Трајковски бр. 62</div>
+  </div>
+</div></body></html>

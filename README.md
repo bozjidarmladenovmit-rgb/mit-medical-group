@@ -18,4 +18,5 @@
 ```bash
 node src/render.js            # сите
 node src/render.js video-1    # само едно
+python3 src/build_zip.py      # ZIP за преземање (dist/)
 ```

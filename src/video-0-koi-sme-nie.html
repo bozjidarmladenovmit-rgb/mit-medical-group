@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="anim.css">
+<style>
+  /* 13 s brand intro, from the clinic's own page description. Meant to be pinned on the page. */
+  .logo-big { position: absolute; top: 360px; left: 50%; width: 420px; height: 420px; margin-left: -210px; border-radius: 50%;
+              background: #fff; display: grid; place-items: center; box-shadow: 0 30px 80px rgba(0,0,0,.35);
+              animation: pop .8s cubic-bezier(.2,.9,.3,1.3) .2s both, out .5s ease-in 3.6s both; }
+  .logo-big img { height: 300px; }
+  .name { position: absolute; top: 840px; left: 70px; right: 70px; text-align: center; animation: in-up .7s ease-out .9s both, out .5s ease-in 3.6s both; }
+  .name .big { font-size: 96px; }
+  .name p { font-size: 46px; font-weight: 700; margin-top: 20px; }
+
+  .s2 { top: 360px; animation: out .5s ease-in 9.2s both; }
+  .s2 h2 { font-size: 92px; animation-delay: 4.1s; }
+  .s2 .list { margin-top: 70px; display: grid; gap: 30px; }
+  .s2 .item { display: flex; gap: 32px; align-items: center; padding: 34px 40px; font-size: 50px; font-weight: 800; }
+  .s2 .ic { flex: 0 0 96px; height: 96px; border-radius: 28px; background: var(--teal); color: #fff; display: grid; place-items: center; font-size: 54px; font-weight: 900; }
+  .s2 .item:nth-child(1) { animation-delay: 4.8s; }
+  .s2 .item:nth-child(2) { animation-delay: 5.7s; }
+  .s2 .item:nth-child(3) { animation-delay: 6.6s; }
+  .s2 .item:nth-child(4) { animation-delay: 7.5s; }
+  .cta { animation: pop .6s cubic-bezier(.2,.9,.3,1.3) 9.6s both; }
+  .cta .pill { animation: pulse 1.2s ease-in-out 10.6s 2; }
+</style></head>
+<body data-duration="13"><div class="canvas story">
+  <div class="band"></div><div class="band two"></div>
+  <div class="logo-big"><img src="../assets/logo-od-screenshot.png"></div>
+  <div class="name"><div class="big">МИТ</div><p>Универзитетска клиника<br>по дентална медицина</p></div>
+
+  <div class="scene s2">
+    <h2 class="big u">Што нè<br><span class="hl">издвојува?</span></h2>
+    <div class="list">
+      <div class="item card r"><span class="ic">✓</span>Универзитетска клиника</div>
+      <div class="item card r"><span class="ic">✓</span>Специјалистички и професорски кадар</div>
+      <div class="item card r"><span class="ic">✓</span>Комплетна стоматолошка грижа</div>
+      <div class="item card r"><span class="ic">✓</span>Современа опрема</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3 class="big">Добредојдовте</h3>
+    <div class="pill">📞 078 480 910</div>
+    <div class="addr">Кисела Вода<br>бул. Борис Трајковски бр. 62</div>
+  </div>
+</div></body></html>

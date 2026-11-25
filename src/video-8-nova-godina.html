@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="anim.css">
+<style>
+  /* 9 s New Year greeting for Story / Reel. */
+  .flake { position: absolute; top: 0; color: #fff; opacity: .6; animation: fall 7s linear both; }
+  .year { position: absolute; top: 420px; left: 0; right: 0; text-align: center; font-size: 300px; font-weight: 900; letter-spacing: -6px;
+          animation: pop .9s cubic-bezier(.2,.9,.3,1.3) .4s both; }
+  .wish { position: absolute; top: 820px; left: 70px; right: 70px; text-align: center; }
+  .wish .big { font-size: 110px; animation-delay: 1.4s; }
+  .wish p { font-size: 54px; font-weight: 700; margin-top: 40px; line-height: 1.3; animation-delay: 2.4s; }
+  .sign { position: absolute; top: 1400px; left: 0; right: 0; text-align: center; animation: in-up .6s ease-out 3.4s both; }
+  .sign .badge { width: 170px; height: 170px; border-radius: 50%; background: #fff; display: grid; place-items: center; margin: 0 auto 26px; }
+  .sign .badge img { height: 124px; }
+  .sign div { font-size: 42px; font-weight: 700; }
+</style></head>
+<body data-duration="9"><div class="canvas story">
+  <div class="band"></div><div class="band two"></div>
+  <span class="flake" style="left:8%;font-size:60px;animation-delay:0s">✻</span>
+  <span class="flake" style="left:30%;font-size:36px;animation-delay:1.2s">✻</span>
+  <span class="flake" style="left:55%;font-size:50px;animation-delay:.5s">✻</span>
+  <span class="flake" style="left:78%;font-size:40px;animation-delay:2s">✻</span>
+  <span class="flake" style="left:90%;font-size:56px;animation-delay:.9s">✻</span>
+  <span class="flake" style="left:18%;font-size:30px;animation-delay:2.6s">✻</span>
+  <div class="year">2027</div>
+  <div class="wish">
+    <div class="big u">Среќна<br><span class="hl">Нова година!</span></div>
+    <p class="u">Здравје, насмевки<br>и многу причини за смеење.</p>
+  </div>
+  <div class="sign"><div class="badge"><img src="../assets/logo-od-screenshot.png"></div><div>Тимот на МИТ Универзитетската клиника<br>по дентална медицина</div></div>
+</div></body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="anim.css">
+<style>
+  /* 12 s: January offer. DRAFT — the offer and dates must be confirmed by the clinic before publishing. */
+  .s1 { top: 330px; text-align: center; }
+  .s1 .k { font-size: 70px; font-weight: 900; animation-delay: .2s; }
+  .s1 .big { font-size: 150px; margin-top: 20px; animation-delay: .7s; }
+  .s1 .dates { display: inline-block; margin-top: 50px; font-size: 50px; animation: pop .6s ease-out 1.6s both; }
+  .offer { margin-top: 70px; padding: 60px 50px; text-align: center; animation: in-up .7s ease-out 2.6s both; }
+  .offer .free { font-size: 120px; font-weight: 900; color: var(--teal); line-height: 1; }
+  .offer p { font-size: 58px; font-weight: 800; line-height: 1.2; margin-top: 24px; }
+  .offer p + p { color: var(--navy); }
+  .note { margin-top: 50px; font-size: 42px; font-weight: 700; animation-delay: 4.2s; }
+  .bottom { position: absolute; left: 70px; right: 70px; top: 1500px; text-align: center; animation: pop .6s cubic-bezier(.2,.9,.3,1.3) 5.4s both; }
+  .bottom .pill { font-size: 60px; padding: 26px 60px; animation: pulse 1.2s ease-in-out 6.2s 4; }
+  .bottom .addr { margin-top: 28px; font-size: 40px; font-weight: 600; }
+  .flake { position: absolute; top: 0; color: #fff; opacity: .55; font-size: 54px; animation: fall 9s linear both; }
+</style></head>
+<body data-duration="12"><div class="canvas story">
+  <div class="band"></div><div class="band two"></div>
+  <span class="flake" style="left:12%;animation-delay:0s">✻</span>
+  <span class="flake" style="left:80%;animation-delay:1.5s;font-size:38px">✻</span>
+  <span class="flake" style="left:45%;animation-delay:3s;font-size:30px">✻</span>
+  <span class="flake" style="left:65%;animation-delay:.8s;font-size:44px">✻</span>
+  <div class="header"><div class="badge"><img src="../assets/logo-od-screenshot.png"></div><div class="clinic">МИТ Универзитетска клиника<br>по дентална медицина</div></div>
+
+  <div class="scene s1">
+    <div class="k u">Нова година –</div>
+    <div class="big u">Нова<br><span class="hl">насмевка</span></div>
+    <div class="dates pill">од 5 до 20 јануари</div>
+    <div class="offer card">
+      <div class="free">БЕСПЛАТЕН</div>
+      <p>стоматолошки преглед</p>
+      <p>+ чистење забен камен</p>
+    </div>
+    <div class="note u">Местата се ограничени – закажете навреме!</div>
+  </div>
+
+  <div class="bottom">
+    <div class="pill">📞 078 480 910</div>
+    <div class="addr">Кисела Вода · бул. Борис Трајковски бр. 62</div>
+  </div>
+</div></body></html>
