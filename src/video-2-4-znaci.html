@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css">
+<style>
+  /* 13 seconds: title, four signs one after another, call to action */
+  @keyframes in-up   { from { opacity: 0; transform: translateY(70px); } to { opacity: 1; transform: none; } }
+  @keyframes in-right{ from { opacity: 0; transform: translateX(160px); } to { opacity: 1; transform: none; } }
+  @keyframes pop     { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: scale(1); } }
+  @keyframes pulse   { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+  @keyframes drift   { from { transform: rotate(-12deg) translateX(0); } to { transform: rotate(-12deg) translateX(-160px); } }
+  @keyframes bar     { from { width: 0; } to { width: 100%; } }
+
+  .band { animation: drift 13s linear both; }
+  .header { animation: in-up .6s ease-out both; }
+  .title { position: absolute; top: 300px; left: 70px; right: 70px; font-size: 104px; animation: in-up .7s ease-out .2s both; }
+  .title span { color: #9fe6ef; }
+  .underline { position: absolute; top: 640px; left: 70px; width: 360px; height: 14px; border-radius: 7px; background: #9fe6ef; overflow: hidden; }
+  .underline i { display: block; height: 100%; background: #fff; animation: bar 1s ease-out .8s both; }
+
+  .list { position: absolute; top: 720px; left: 70px; right: 70px; display: grid; gap: 30px; animation: fade .5s ease-in 9.0s both; }
+  @keyframes fade { to { opacity: 0; transform: translateY(-40px); } }
+  .item { display: flex; align-items: center; gap: 34px; padding: 34px 40px; }
+  .item:nth-child(1) { animation: in-right .55s ease-out 1.6s both; }
+  .item:nth-child(2) { animation: in-right .55s ease-out 3.4s both; }
+  .item:nth-child(3) { animation: in-right .55s ease-out 5.2s both; }
+  .item:nth-child(4) { animation: in-right .55s ease-out 7.0s both; }
+  .n { flex: 0 0 104px; height: 104px; border-radius: 30px; background: var(--navy); color: #fff;
+       display: grid; place-items: center; font-size: 60px; font-weight: 900; }
+  .item p { font-size: 50px; font-weight: 800; line-height: 1.15; }
+
+  .cta { position: absolute; left: 70px; right: 70px; top: 820px; text-align: center; animation: pop .6s cubic-bezier(.2,.9,.3,1.3) 9.5s both; }
+  .cta h3 { font-size: 64px; font-weight: 900; margin-bottom: 44px; }
+  .cta .pill { font-size: 54px; padding: 24px 56px; animation: pulse 1.2s ease-in-out 10.2s 2; }
+  .cta .addr { margin-top: 28px; font-size: 38px; font-weight: 600; }
+</style></head>
+<body data-duration="13"><div class="canvas story">
+  <div class="band"></div><div class="band two"></div>
+  <div class="header"><div class="badge"><img src="../assets/logo-od-screenshot.png"></div><div class="clinic">МИТ Универзитетска клиника<br>по дентална медицина</div></div>
+  <div class="title big">4 знаци дека е <span>време за преглед</span></div>
+  <div class="underline"><i></i></div>
+  <div class="list">
+    <div class="item card"><div class="n">1</div><p>Непцата крварат при четкање</p></div>
+    <div class="item card"><div class="n">2</div><p>Чувствителност на ладно или топло</p></div>
+    <div class="item card"><div class="n">3</div><p>Лош здив што не поминува</p></div>
+    <div class="item card"><div class="n">4</div><p>Болка при џвакање</p></div>
+  </div>
+  <div class="cta">
+    <h3>Не чекајте да стане полошо.</h3>
+    <div class="pill">📞 078 480 910</div>
+    <div class="addr">Кисела Вода · бул. Борис Трајковски бр. 62</div>
+  </div>
+</div></body></html>

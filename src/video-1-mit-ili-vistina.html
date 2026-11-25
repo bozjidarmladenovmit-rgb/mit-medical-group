@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css">
+<style>
+  /* 12 seconds: title → myth → МИТ stamp → truth → call to action */
+  @keyframes in-up   { from { opacity: 0; transform: translateY(80px); } to { opacity: 1; transform: none; } }
+  @keyframes in-left { from { opacity: 0; transform: translateX(-120px); } to { opacity: 1; transform: none; } }
+  @keyframes out     { to { opacity: 0; transform: translateY(-60px); } }
+  @keyframes stamp   { 0% { opacity: 0; transform: rotate(-14deg) scale(3); } 60% { opacity: 1; transform: rotate(-14deg) scale(.9); } 100% { opacity: 1; transform: rotate(-14deg) scale(1); } }
+  @keyframes shake   { 0%,100% { transform: none; } 25% { transform: translateX(-14px); } 75% { transform: translateX(14px); } }
+  @keyframes pop     { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: scale(1); } }
+  @keyframes pulse   { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+  @keyframes drift   { from { transform: rotate(-12deg) translateX(0); } to { transform: rotate(-12deg) translateX(-160px); } }
+
+  .band { animation: drift 12s linear both; }
+  .header { animation: in-up .6s ease-out both; }
+
+  .scene1 { position: absolute; top: 380px; left: 70px; right: 70px; animation: out .5s ease-in 5.6s both; }
+  .title { font-size: 150px; animation: in-left .7s cubic-bezier(.2,.9,.3,1.2) .2s both; }
+  .title span { color: #9fe6ef; display: block; animation: in-left .7s cubic-bezier(.2,.9,.3,1.2) .5s both; }
+  .myth { margin-top: 90px; padding: 60px; animation: in-up .7s ease-out 1.4s both, shake .35s ease-in-out 3.25s 2; }
+  .myth small { display: block; font-size: 34px; font-weight: 800; color: var(--teal); letter-spacing: 3px; margin-bottom: 20px; }
+  .myth p { font-size: 70px; font-weight: 800; line-height: 1.12; }
+  .stamp {
+    position: absolute; top: 780px; right: 20px;
+    border: 12px solid var(--red); color: var(--red); background: rgba(255,255,255,.94);
+    font-weight: 900; font-size: 110px; padding: 6px 40px; border-radius: 24px; letter-spacing: 6px;
+    animation: stamp .45s ease-out 3s both;
+  }
+
+  .scene2 { position: absolute; top: 400px; left: 70px; right: 70px; animation: out .5s ease-in 9.0s both; }
+  .scene2 .label { font-size: 46px; font-weight: 900; color: #9fe6ef; letter-spacing: 4px; animation: in-up .5s ease-out 6s both; }
+  .scene2 h2 { font-size: 92px; margin-top: 24px; animation: in-up .6s ease-out 6.3s both; }
+  .scene2 p { font-size: 50px; font-weight: 600; line-height: 1.35; margin-top: 50px; animation: in-up .6s ease-out 7.1s both; }
+  .scene2 p b { font-weight: 900; }
+
+  .cta { position: absolute; left: 70px; right: 70px; top: 700px; text-align: center; animation: pop .6s cubic-bezier(.2,.9,.3,1.3) 9.5s both; }
+  .cta h3 { font-size: 80px; margin-bottom: 50px; }
+  .cta .pill { font-size: 54px; padding: 26px 56px; animation: pulse 1.2s ease-in-out 10.3s 2; }
+  .cta .addr { margin-top: 34px; font-size: 40px; font-weight: 600; line-height: 1.4; }
+</style></head>
+<body data-duration="12"><div class="canvas story">
+  <div class="band"></div><div class="band two"></div>
+  <div class="header"><div class="badge"><img src="../assets/logo-od-screenshot.png"></div><div class="clinic">МИТ Универзитетска клиника<br>по дентална медицина</div></div>
+
+  <div class="scene1">
+    <div class="title big">МИТ или<span>вистина?</span></div>
+    <div class="myth card"><small>ЧЕСТО СЛУШАМЕ</small><p>„Ако не ме боли, не ми треба стоматолог.“</p></div>
+    <div class="stamp">МИТ</div>
+  </div>
+
+  <div class="scene2">
+    <div class="label">ВИСТИНАТА</div>
+    <h2 class="big">Најчесто<br>не боли на<br>почетокот.</h2>
+    <p>Кариесот и воспалението на непцата се развиваат тивко. <b>Превентивниот преглед</b> ги открива навреме – кога лекувањето е најлесно.</p>
+  </div>
+
+  <div class="cta">
+    <h3 class="big">Закажете<br>преглед</h3>
+    <div class="pill">📞 078 480 910</div>
+    <div class="addr">Кисела Вода · бул. Борис Трајковски бр. 62</div>
+  </div>
+</div></body></html>
