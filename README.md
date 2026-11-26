@@ -20,3 +20,15 @@ node src/render.js            # сите
 node src/render.js video-1    # само едно
 python3 src/build_zip.py      # ZIP за преземање (dist/)
 ```
+
+## Св. Лука (средно медицинско училиште)
+
+Папката `st-lukas/` содржи посебен план и материјали за Приватното медицинско средно училиште Св. Лука:
+`PLAN-DEKEMVRI.md`, `TEKSTOVI.md`, `objavi/`, `videa/`, `src/`.
+
+```bash
+cd st-lukas
+python3 src/make_profiles.py   # ги прави 4-те видеа „Профил на неделата“ (HTML)
+node src/render.js             # слики и видеа
+python3 src/build_zip.py       # ZIP за преземање (st-lukas/dist/)
+```

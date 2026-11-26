@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="anim.css">
+<style>
+  /* 15 s: six reasons, taken from the school's own description, counted up one by one. */
+  .s1 { top: 300px; animation: out .5s ease-in 11.6s both; }
+  .s1 .big { font-size: 100px; animation-delay: .2s; }
+  .list { margin-top: 50px; display: grid; gap: 20px; }
+  .item { display: flex; gap: 28px; align-items: center; padding: 26px 36px; font-size: 44px; font-weight: 800; line-height: 1.12; }
+  .item .n { flex: 0 0 80px; height: 80px; border-radius: 50%; background: var(--navy); color: var(--gold); display: grid; place-items: center; font-size: 44px; font-weight: 900; }
+  .item:nth-child(1) { animation-delay: 1.2s; } .item:nth-child(2) { animation-delay: 2.8s; } .item:nth-child(3) { animation-delay: 4.4s; }
+  .item:nth-child(4) { animation-delay: 6.0s; } .item:nth-child(5) { animation-delay: 7.6s; } .item:nth-child(6) { animation-delay: 9.2s; }
+  .cta { top: 680px; animation: pop .6s cubic-bezier(.2,.9,.3,1.3) 12s both; }
+  .cta h3 { font-size: 84px; }
+</style></head>
+<body data-duration="15"><div class="canvas story">
+  <div class="arc a"></div><div class="arc b"></div>
+  <div class="header"><img src="../assets/logo-st-lukas-od-screenshot.png"><div class="school">ПРИВАТНО МЕДИЦИНСКО<br>СРЕДНО УЧИЛИШТЕ<br>СВ. ЛУКА</div></div>
+  <div class="scene s1">
+    <div class="big u">6 причини за<br><span class="gold">Св. Лука</span></div>
+    <div class="list">
+      <div class="item card r"><span class="n">1</span>Мали групи и индивидуален пристап</div>
+      <div class="item card r"><span class="n">2</span>Наставници со практично искуство</div>
+      <div class="item card r"><span class="n">3</span>Современи кабинети и лаборатории</div>
+      <div class="item card r"><span class="n">4</span>Практична настава со ментор</div>
+      <div class="item card r"><span class="n">5</span>Настава само во прва смена</div>
+      <div class="item card r"><span class="n">6</span>Пат кон факултет и кариера</div>
+    </div>
+  </div>
+  <div class="cta">
+    <h3 class="big">Дојди да нè<br><span class="gold">запознаеш</span></h3>
+    <div class="pill">📞 078 324 324</div>
+    <div class="addr">stlukas.edu.mk · Кисела Вода, бул. Борис Трајковски бр. 62</div>
+  </div>
+</div></body></html>
