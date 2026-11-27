@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="mk"><head><meta charset="utf-8">
+<style>
+  /* 4 s end card for the Seedance ad: bright, calm, matches the clinic's daylight look. */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { overflow: hidden; font-family: 'Inter Display', 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+  .story { position: relative; width: 1080px; height: 1920px; overflow: hidden;
+           background: radial-gradient(90% 60% at 50% 40%, #ffffff 0%, #f7f6f5 65%, #ecebea 100%); color: #7a0000; }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+  @keyframes line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes drift { from { transform: translateY(0); } to { transform: translateY(-40px); } }
+  .glow { position: absolute; inset: 0; background: radial-gradient(40% 25% at 50% 42%, rgba(122,0,0,.05), transparent 70%); animation: fade 1s ease-out both; }
+  .wrap { position: absolute; left: 70px; right: 70px; top: 470px; text-align: center; animation: drift 4s linear both; }
+  /* The university coin goes here: drop the logo file at ../assets/mit-univerzitet-moneta.png */
+  .logo { height: 420px; margin-bottom: 50px; animation: up 1s cubic-bezier(.2,.8,.2,1) 0s both; }
+  .logo img { height: 420px; }
+  .logo:not(:has(img)) { height: 0; margin: 0; }
+  .name { display: flex; justify-content: center; align-items: baseline; gap: 22px; color: #7a0000; line-height: 1; animation: up .9s cubic-bezier(.2,.8,.2,1) .2s both; }
+  .name .m { font-size: 118px; font-weight: 900; letter-spacing: 2px; }
+  .name .u { font-size: 74px; font-weight: 200; letter-spacing: 4px; }
+  .city { font-size: 44px; font-weight: 600; letter-spacing: 18px; margin-top: 26px; color: #6b6b6b; animation: up .9s cubic-bezier(.2,.8,.2,1) .45s both; }
+  .rule { width: 220px; height: 4px; margin: 70px auto; border-radius: 2px; background: #7a0000; transform-origin: center; animation: line .8s ease-out 1s both; }
+  .tag { font-size: 58px; font-weight: 500; line-height: 1.35; color: #3a3a3a; animation: up 1s ease-out 1.3s both; }
+  .tag b { font-weight: 800; color: #7a0000; }
+</style></head>
+<body data-duration="4"><div class="story canvas">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="logo"></div>
+    <div class="name"><span class="m">МИТ</span><span class="u">УНИВЕРЗИТЕТ</span></div>
+    <div class="city">СКОПЈЕ</div>
+    <div class="rule"></div>
+    <div class="tag">Место каде што<br><b>уметноста и науката</b><br>стануваат едно.</div>
+  </div>
+</div></body></html>
