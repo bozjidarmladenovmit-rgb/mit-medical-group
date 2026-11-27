@@ -11,15 +11,15 @@
   @keyframes line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
   @keyframes drift { from { transform: translateY(0); } to { transform: translateY(-40px); } }
   .glow { position: absolute; inset: 0; background: radial-gradient(40% 25% at 50% 42%, rgba(122,0,0,.05), transparent 70%); animation: fade 1s ease-out both; }
-  .wrap { position: absolute; left: 70px; right: 70px; top: 470px; text-align: center; animation: drift 4s linear both; }
-  /* The university coin goes here: drop the logo file at ../assets/mit-univerzitet-moneta.png */
-  .logo { height: 420px; margin-bottom: 50px; animation: up 1s cubic-bezier(.2,.8,.2,1) 0s both; }
-  .logo img { height: 420px; }
+  .wrap { position: absolute; left: 70px; right: 70px; top: 400px; text-align: center; animation: drift 4s linear both; }
+  /* Official MIT University logo (coin + wordmark), transparent PNG. */
+  .logo { height: 640px; margin-bottom: 10px; animation: up 1s cubic-bezier(.2,.8,.2,1) 0s both; }
+  .logo img { height: 640px; }
   .logo:not(:has(img)) { height: 0; margin: 0; }
   .name { display: flex; justify-content: center; align-items: baseline; gap: 22px; color: #7a0000; line-height: 1; animation: up .9s cubic-bezier(.2,.8,.2,1) .2s both; }
   .name .m { font-size: 118px; font-weight: 900; letter-spacing: 2px; }
   .name .u { font-size: 74px; font-weight: 200; letter-spacing: 4px; }
-  .city { font-size: 44px; font-weight: 600; letter-spacing: 18px; margin-top: 26px; color: #6b6b6b; animation: up .9s cubic-bezier(.2,.8,.2,1) .45s both; }
+  .city { font-size: 44px; font-weight: 600; letter-spacing: 18px; margin-top: 18px; color: #7a0000; animation: up .9s cubic-bezier(.2,.8,.2,1) .6s both; }
   .rule { width: 220px; height: 4px; margin: 70px auto; border-radius: 2px; background: #7a0000; transform-origin: center; animation: line .8s ease-out 1s both; }
   .tag { font-size: 58px; font-weight: 500; line-height: 1.35; color: #3a3a3a; animation: up 1s ease-out 1.3s both; }
   .tag b { font-weight: 800; color: #7a0000; }
@@ -27,8 +27,7 @@
 <body data-duration="4"><div class="story canvas">
   <div class="glow"></div>
   <div class="wrap">
-    <div class="logo"></div>
-    <div class="name"><span class="m">МИТ</span><span class="u">УНИВЕРЗИТЕТ</span></div>
+    <div class="logo"><img src="../assets/mit-univerzitet-logo.png"></div>
     <div class="city">СКОПЈЕ</div>
     <div class="rule"></div>
     <div class="tag">Место каде што<br><b>уметноста и науката</b><br>стануваат едно.</div>
