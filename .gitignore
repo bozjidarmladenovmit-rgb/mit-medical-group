@@ -1,2 +1,5 @@
 dist/
 st-lukas/dist/
+
+# Final ads with the patient's face stay local, not on GitHub
+reklama/*FINAL*.mp4
