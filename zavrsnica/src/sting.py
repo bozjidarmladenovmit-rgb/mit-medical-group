@@ -1,5 +1,5 @@
 """Synthesises a short, warm musical ending ("sting") for the end card, in a given major key.
-A soft string-like swell, two rising piano notes, then a full major chord that rings out.
+Piano only: a gentle rising melody of single notes that resolves on the tonic and rings out.
     python3 src/sting.py C# 4.4 out.wav
 """
 import sys, wave
@@ -45,12 +45,11 @@ def main(key='C#', total=4.4, out='sting.wav'):
     r = 60 + NOTES[key]          # tonic around middle C
     third, fifth = r + 4, r + 7
     buf = np.zeros(int(total * SR))
-    add(buf, 0.35 * pad([hz(r - 12), hz(third - 12), hz(fifth - 12), hz(r)], total), 0.0)
-    add(buf, 0.55 * piano(hz(fifth), 1.4), 0.25)                  # rising motif: 5th ...
-    add(buf, 0.6 * piano(hz(r + 12), 1.4), 0.6)                   # ... to octave
-    for m, v in [(r - 12, 0.6), (r, 0.5), (third, 0.45), (fifth, 0.45), (r + 12, 0.5), (third + 12, 0.25)]:
-        add(buf, v * piano(hz(m), total - 1.0), 1.0)              # final major chord as the logo lands
-    add(buf, 0.18 * piano(hz(r + 24), 2.5), 1.02)                 # small sparkle on top
+    # Piano melody only, single notes (no chord): a gentle rising phrase that resolves on the tonic.
+    phrase = [(0.10, fifth - 12, 0.42), (0.45, r, 0.45), (0.80, third, 0.47), (1.15, fifth, 0.50), (1.55, r + 12, 0.58)]
+    for i, (at, m, v) in enumerate(phrase):
+        ring = total - at if i == len(phrase) - 1 else 1.6      # last note rings out to the end
+        add(buf, v * piano(hz(m), ring), at)
     buf = reverb(buf)
     fade = np.ones_like(buf); n = int(0.9 * SR); fade[-n:] = np.linspace(1, 0, n)
     buf *= fade
@@ -59,6 +58,7 @@ def main(key='C#', total=4.4, out='sting.wav'):
     with wave.open(out, 'wb') as w:
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
         w.writeframes((st * 32767).astype(np.int16).tobytes())
+
 
 if __name__ == '__main__':
     main(sys.argv[1], float(sys.argv[2]), sys.argv[3])
