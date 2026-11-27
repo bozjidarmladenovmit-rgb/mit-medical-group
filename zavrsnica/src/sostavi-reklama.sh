@@ -44,14 +44,16 @@ color=c=white:s=1080x1920:r=30:d=$D,format=rgba,colorchannelmixer=aa=0.6,fade=t=
   rm -rf "$TMP"; echo "$OUT ($D s, end card over the last 4 s)"; exit 0
 fi
 python3 "$HERE/sting.py" "$KEY" "$STING_LEN" "$TMP/sting.wav"
+# NOSTING=1: keep only the video's own music (levelled), no added ending.
+if [ -n "$NOSTING" ]; then STING_VOL=-120dB; else STING_VOL=-1dB; fi
 ffmpeg -y -loglevel error -i "$IN" -framerate 30 -i "$TMP/fr/o%04d.png" -i "$TMP/sting.wav" -filter_complex "\
 [0:v]scale=1080:1920:flags=lanczos,fps=30,setsar=1,tpad=stop_mode=clone:stop_duration=$HOLD,format=rgba[base];\
 color=c=white:s=1080x1920:r=30:d=$T,format=rgba,colorchannelmixer=aa=0.6,fade=t=in:st=$START:d=0.9:alpha=1[veil];\
 [base][veil]overlay=shortest=1[b2];\
 [1:v]setpts=PTS-STARTPTS+$START/TB[ov];\
 [b2][ov]overlay=eof_action=pass,format=yuv420p[v];\
-[0:a]aresample=48000,acompressor=threshold=-24dB:ratio=4:attack=5:release=200:makeup=6dB,loudnorm=I=-15:TP=-2,aresample=48000,afade=t=out:st=$(python3 -c "print(round($D-0.8,2))"):d=1.0,apad=whole_dur=$T[m];\
-[2:a]aresample=48000,volume=-1dB,adelay=$(python3 -c "print(int($STING_AT*1000))")|$(python3 -c "print(int($STING_AT*1000))"),apad=whole_dur=$T[s];\
+[0:a]aresample=48000,acompressor=threshold=-24dB:ratio=4:attack=5:release=200:makeup=6dB,loudnorm=I=-15:TP=-2,aresample=48000,afade=t=out:st=$(python3 -c "print(round($D-0.8 if not '$NOSTING' else $D-0.3,2))"):d=$( [ -n "$NOSTING" ] && echo 0.3 || echo 1.0 ),apad=whole_dur=$T[m];\
+[2:a]aresample=48000,volume=$STING_VOL,adelay=$(python3 -c "print(int($STING_AT*1000))")|$(python3 -c "print(int($STING_AT*1000))"),apad=whole_dur=$T[s];\
 [m][s]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000[a]" \
 -map "[v]" -map "[a]" -t $T -c:v libx264 -crf 18 -preset slow -c:a aac -b:a 192k -movflags +faststart "$OUT"
 rm -rf "$TMP"
