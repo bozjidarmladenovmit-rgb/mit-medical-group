@@ -1,6 +1,7 @@
 #!/bin/bash
 # Joins a Seedance video with the transparent end card:
 # the last frame is held, a soft white veil fades in, and the logo and text animate on top.
+# Audio is evened out (compressor) and normalised to -14 LUFS, the usual level for social media.
 #   bash src/sostavi-reklama.sh seedance.mp4 out.mp4
 set -e
 IN="$1"; OUT="$2"; HERE="$(cd "$(dirname "$0")" && pwd)"
@@ -16,7 +17,7 @@ color=c=white:s=1080x1920:r=30:d=$T,format=rgba,colorchannelmixer=aa=0.6,fade=t=
 [base][veil]overlay=shortest=1[b2];\
 [1:v]setpts=PTS-STARTPTS+$START/TB[ov];\
 [b2][ov]overlay=eof_action=pass,format=yuv420p[v];\
-[0:a]aresample=48000,apad=whole_dur=$T,afade=t=out:st=$(python3 -c "print(round($D-1,2))"):d=$(python3 -c "print(round($HOLD+1,2))")[a]" \
+[0:a]aresample=48000,acompressor=threshold=-24dB:ratio=4:attack=5:release=200:makeup=6dB,loudnorm=I=-14:TP=-1.5:LRA=7,aresample=48000,apad=whole_dur=$T,afade=t=out:st=$(python3 -c "print(round($D-1,2))"):d=$(python3 -c "print(round($HOLD+1,2))")[a]" \
 -map "[v]" -map "[a]" -t $T -c:v libx264 -crf 18 -preset slow -c:a aac -b:a 192k -movflags +faststart "$OUT"
 rm -rf "$FR"
 echo "$OUT ($T s)"
